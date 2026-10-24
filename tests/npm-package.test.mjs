@@ -60,7 +60,7 @@ test('offline tarball install creates an isolated usable home and fails safely',
   }
 
   assert.equal(pkg.name, 'seeko-stack');
-  assert.equal(pkg.version, '0.1.0');
+  assert.match(pkg.version, /^\d+\.\d+\.\d+$/);
   assert.deepEqual(pkg.dependencies || {}, {});
   assert.deepEqual(pkg.scripts || {}, {});
   assert.equal(pkg.license, 'MIT');
@@ -106,7 +106,7 @@ test('offline tarball install creates an isolated usable home and fails safely',
   assert.match(readFileSync(join(unpacked, 'package/LICENSE'), 'utf8'), /MIT License/);
   ok('npm', ['install', '--global', '--prefix', prefix, '--offline', '--no-audit', '--no-fund', tarball]);
   const bin = join(prefix, 'bin/seeko-stack');
-  assert.equal(ok(bin, ['--version']), '0.1.0');
+  assert.equal(ok(bin, ['--version']), pkg.version);
   assert.match(ok(bin, ['--help']), /init <new-directory>/);
   fail(bin, ['init'], /Expected init/);
 
@@ -153,7 +153,7 @@ test('offline tarball install creates an isolated usable home and fails safely',
   assert.equal(git(['remote']), '');
   assert.deepEqual(git(['ls-files']).split('\n').sort(), [...pkg.files, ...Object.keys(links)].sort());
   assert.equal(git(['log', '-1', '--format=%an <%ae>']), 'seeko-stack initializer <initializer@seeko-stack.invalid>');
-  assert.match(git(['log', '-1', '--format=%s']), /^Initialize seeko-stack 0\.1\.0$/);
+  assert.equal(git(['log', '-1', '--format=%s']), `Initialize seeko-stack ${pkg.version}`);
   assert.equal(run('git', ['config', '--local', 'user.name'], { cwd: initialized }).status, 1);
   assert.deepEqual(readdirSync(join(initialized, 'projects')), []);
   assert.deepEqual(readdirSync(join(initialized, 'state')), []);

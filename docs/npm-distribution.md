@@ -1,7 +1,10 @@
 # npm distribution
 
-seeko-stack 0.1.0 is available as a [GitHub release](https://github.com/seeko-codes/seeko-stack/releases/tag/v0.1.0) containing an npm tarball, with the MIT license and attribution to [Firstmate](https://github.com/kunchenguid/firstmate).
+seeko-stack 0.1.1 is available as a [GitHub release](https://github.com/seeko-codes/seeko-stack/releases/tag/v0.1.1) containing an npm tarball, with the MIT license and attribution to [Firstmate](https://github.com/kunchenguid/firstmate).
 It is not published to the npm registry; a bare `npm install --global seeko-stack` is not an installation command for this release.
+
+For a fresh machine, start with [Install the whole stack](install.md), which includes the other applications, support tools, authentication, and startup verification.
+This page covers the portable package itself.
 
 ## Install and initialize
 
@@ -10,7 +13,7 @@ The initializer itself needs only Node.js and Git and requires no network access
 Install the release tarball, then choose a destination that does not exist and whose parent already exists:
 
 ```sh
-npm install --global --allow-remote=root https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.0/seeko-stack-0.1.0.tgz
+npm install --global --allow-remote=root https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.1/seeko-stack-0.1.1.tgz
 seeko-stack --version
 seeko-stack init "$HOME/seeko-stack"
 cd "$HOME/seeko-stack"
@@ -33,7 +36,8 @@ The initialized home does not depend on the npm installation or original source 
 
 The package includes Firstmate's scripts, harness integration files, skills, documentation, tests, and all five friendly skill aliases.
 It does not install native Herdr, terminal backends, harness CLIs, provider accounts, paid harness access, or supporting tools.
-Firstmate's runtime additionally needs the tools described in the [README setup requirements](../README.md#requirements) and the [chosen backend's configuration](configuration.md#runtime-backend-configbackend--fm_backend).
+Follow [the complete setup sequence](install.md) to install the runtime's other tools and applications.
+The [toolchain reference](configuration.md#toolchain) and [chosen backend's configuration](configuration.md#runtime-backend-configbackend--fm_backend) own the current dependency contracts.
 The [runtime bootstrap](../bin/fm-bootstrap.sh) owns the current supporting CLI checks; those tools are prerequisites, not bundled npm dependencies.
 Review those prerequisites before following the [harness launch instructions](../README.md#install-and-launch) from the new home.
 The initializer does not launch agents, call models, download tools, or dispatch projects.
@@ -63,7 +67,7 @@ Pack to a directory outside the checkout and install that exact artifact:
 
 ```sh
 npm pack --pack-destination /path/to/artifacts
-npm install --global /path/to/artifacts/seeko-stack-0.1.0.tgz
+npm install --global /path/to/artifacts/seeko-stack-0.1.1.tgz
 ```
 
 Run `bash tests/fm-npm-package.test.sh` for the offline pack/install/init regression using temporary global prefix, cache, home, and noisy Git configuration.

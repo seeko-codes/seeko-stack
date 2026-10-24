@@ -1,6 +1,6 @@
 {
   "name": "seeko-stack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Portable Firstmate distro with an outcome-focused workflow and friendly skill aliases",
   "license": "MIT",
@@ -377,6 +377,7 @@
     "docs/gerrit-forge-integration.md",
     "docs/gitlab-merge-watch.md",
     "docs/herdr-backend.md",
+    "docs/install.md",
     "docs/jev-guards.md",
     "docs/npm-distribution.md",
     "docs/orca-backend.md",

@@ -1,16 +1,31 @@
 <h1 align="center">seeko-stack</h1>
 
 This is a portable distribution of Firstmate, keeping its full operating machinery and adding an outcome-focused workflow and friendlier skill names.
-Start with the [npm distribution guide](docs/npm-distribution.md) for installation and runtime prerequisites, then the [seeko-stack guide](docs/seeko-stack.md) for everyday workflow and source ownership.
+Start with [Install the whole stack](docs/install.md) for the complete agent-assisted setup, then the [seeko-stack guide](docs/seeko-stack.md) for everyday workflow.
 The upstream Firstmate setup and reference material remains below; its upstream clone instructions create a separate upstream installation, not this customized distro home.
+
+## Give this repository to an agent
+
+Send your agent this request:
+
+> Set up https://github.com/seeko-codes/seeko-stack on this machine.
+> Read README.md and docs/install.md, install the required apps and supporting tools, and configure Herdr with Codex for the manager and workers.
+> Include Ghostty if I need a terminal app; reuse my existing compatible tools and settings.
+> Work through the verification steps and tell me exactly when I need to complete account login or a trust prompt.
+> Import no personal projects or memory.
+
+The [complete installation guide](docs/install.md) covers the host toolchain, Ghostty, Herdr, Codex and GitHub authentication, Treehouse, no-mistakes, all required AXI tools, agent skills, a dedicated Chrome for Testing browser, persistent shell settings, startup checks, and optional integrations.
+Its default path is macOS, with Linux installation notes.
+Ghostty is the terminal window; Herdr manages the persistent panes inside it.
 
 ## Install seeko-stack
 
 Requires macOS or Linux, Node.js 22+, npm 10+, and Git 2.28+.
+If the complete toolchain is not ready yet, follow [the full setup guide](docs/install.md) first.
 Install the GitHub release and create a new home in a directory that does not already exist:
 
 ```sh
-npm install --global --allow-remote=root https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.0/seeko-stack-0.1.0.tgz
+npm install --global --allow-remote=root https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.1/seeko-stack-0.1.1.tgz
 seeko-stack init "$HOME/seeko-stack"
 cd "$HOME/seeko-stack"
 ```
@@ -255,6 +270,8 @@ Firstmate's skills live in two separate places with different audiences:
 
 ## Documentation
 
+- [docs/install.md](docs/install.md) - complete setup for an installing agent, including applications, CLI tools, authentication, configuration, launch, and readiness checks.
+- [docs/npm-distribution.md](docs/npm-distribution.md) - the npm package, portable initialization, content exclusions, and upgrade limits.
 - [docs/architecture.md](docs/architecture.md) - maintainer architecture for the crew, supervision, worktrees, secondmates, and project modes.
 - [docs/configuration.md](docs/configuration.md) - environment variables, `FM_HOME`, runtime backend selection, optional Relay and its X and Discord setup steps, trusted external process-event adapter setup, the files you set, and harness support.
 - [docs/extension-bindings.md](docs/extension-bindings.md) - maintainer architecture for the narrow trusted external `process-event-adapter/1` package, binding, handshake, and evidence boundary.

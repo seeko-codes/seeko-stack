@@ -6,7 +6,7 @@ It is available for normal skill selection inside this home, not just explicit i
 
 ## Home and entry point
 
-The [npm distribution guide](npm-distribution.md) owns installation, prerequisites, content boundaries, and initialization behavior.
+The [whole-stack installation guide](install.md) owns the setup sequence; the [npm distribution guide](npm-distribution.md) owns package contents and initialization behavior.
 Choose a new home such as `~/seeko-stack`; no particular parent folder is required.
 The initialized home contains the full Firstmate runtime and harness integrations, `.agents/skills/` for skill discovery, and fresh `data/`, `state/`, `config/`, and `projects/` directories.
 Open a supported primary harness in that home using the [launch instructions](../README.md#install-and-launch).
