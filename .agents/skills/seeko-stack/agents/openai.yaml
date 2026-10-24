@@ -1,0 +1,5 @@
+interface:
+  display_name: "seeko-stack"
+  short_description: "Coordinate bounded work toward a clear outcome"
+policy:
+  allow_implicit_invocation: true

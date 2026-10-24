@@ -1,0 +1,6 @@
+{
+  ".agents/skills/firstmate-calm": "../../.claude/mods/firstmate-calm",
+  ".claude/skills": "../.agents/skills",
+  ".pi/extensions/lib/fm-calm-preservation.ts": "../../../.claude/mods/firstmate-calm/lib/fm-calm-preservation.ts",
+  ".pi/extensions/lib/fm-calm-working-ship-sprite.ts": "../../../.claude/mods/firstmate-calm/lib/fm-calm-working-ship-sprite.ts"
+}
