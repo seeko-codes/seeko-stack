@@ -10,12 +10,14 @@ The initializer itself needs only Node.js and Git and requires no network access
 Install the release tarball, then choose a destination that does not exist and whose parent already exists:
 
 ```sh
-npm install --global https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.0/seeko-stack-0.1.0.tgz
+npm install --global --allow-remote=root https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.0/seeko-stack-0.1.0.tgz
 seeko-stack --version
 seeko-stack init "$HOME/seeko-stack"
 cd "$HOME/seeko-stack"
 ```
 
+`--allow-remote=root` permits the explicitly requested release URL on npm 12 without allowing URL dependencies.
+It is a per-command option and does not change global npm settings.
 If the global prefix needs different permissions, use an npm prefix you own and put its `bin` directory on `PATH`.
 `seeko-stack --help` describes the command interface.
 Existing directories, even empty ones, files, and symbolic links are refused; there is no overwrite or force option.

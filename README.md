@@ -10,7 +10,7 @@ Requires macOS or Linux, Node.js 22+, npm 10+, and Git 2.28+.
 Install the GitHub release and create a new home in a directory that does not already exist:
 
 ```sh
-npm install --global https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.0/seeko-stack-0.1.0.tgz
+npm install --global --allow-remote=root https://github.com/seeko-codes/seeko-stack/releases/download/v0.1.0/seeko-stack-0.1.0.tgz
 seeko-stack init "$HOME/seeko-stack"
 cd "$HOME/seeko-stack"
 ```
